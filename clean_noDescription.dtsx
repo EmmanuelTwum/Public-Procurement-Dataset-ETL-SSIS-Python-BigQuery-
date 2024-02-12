@@ -1,0 +1,2754 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/10/2024 10:00:19 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="AMALITECH-PC-10"
+  DTS:CreatorName="AzureAD\EmmanuelTwumOsafo"
+  DTS:DTSID="{CE06846B-BCBC-4375-A08E-901356E3F158}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{A63A32D9-20D5-4624-A251-43A115A4E3E9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[API 1]"
+      DTS:CreationName="ZS-API"
+      DTS:DTSID="{2FC375DE-75AF-47C0-94EF-FAE4E3E5764D}"
+      DTS:ObjectName="API 1">
+      <DTS:ObjectData>
+        <ConnectionManager
+          ConnectionString="ServiceUrl=https://www.googleapis.com/bigquery/v2;ConfigFile=;Provider=GoogleBigQuery;AuthName=OAuth;UserName=;ClientId=;RefreshTokenFilePath=;Parameters=[{Name:&quot;UseCustomApp&quot;,Value:&quot;False&quot;},{Name:&quot;ProjectId&quot;,Value:&quot;public-datasets-412114&quot;},{Name:&quot;DatasetId&quot;,Value:&quot;public_procurement_DW&quot;},{Name:&quot;Location&quot;,Value:&quot;US&quot;}];UseEmbeddedConfig=False;TrustedDomains=cloudresourcemanager.googleapis.com;RetryMode=RetryWhenStatusCodeMatch;RetryCountMax=5;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=True;RetryMessageList=;RetryStatusCodeList=429|503;ConnectionStringFile=;RetainSameConnection=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False"
+          ConnectByProxy="False">
+          <AccessToken
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS2JQqRegikinpXtonZvFqwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACoAKpXkkmiqw2MBh0w102qejJp4zrLh3BOrKxkWzPvoAAAAAAOgAAAAAIAACAAAACpm6LTsbZe5eVmN+G+pJ+kbAWzoxYurnbw/0Kb+6NaNMABAACXKh1OQ4wwFcXC3QNe6COT3hc58wQgqhMMADBG/r3DSeq/qjCqWegvN0x8sNRIyxLH2CGmZ/U1RCSPmS7s+VIAsBv50kRwviY8RX7X90Rdrj3mRLuxqbeGx+6jHIjpATwAfpJ7rquj2CMV5BY/bXs4v4LzytEOV4xSS/PVELHlQSLWaHq9qdqf8jWPewbepQ38Bsm8kutkGWodCiMVsiewbUlDe3EgkgMj0bauNvRGFUjMcn1s45aWCYxJ2m9rBlpMVcKxdQr+Q10TCp3lOOgL4rJpr0IFBoDHQAMjS/METMfbzDOTVcNgHw+0RqdOk2zSPFq6a0Pw7JVt49QKkZJ4SWO0hVeeWckrTvEBCbktc/sgY9fHC6rQUUFOKwzdS431f5x6T2ysxDNBrH/sdl2U5M2cHA7p0RqEBAYiepH7Yke3qYd+tl3YhwJ8pFtrBlNcWbVAM5zGcY6RXnLUc3INh3xvT2C2A03KcoyDa577ST8AhortZuQ8EKLwqDdHd/j/68vBERUKEoKgMXHso1cWoNezMuXjQLzfriWz4c9hrpi4JL3Dql28r+sSxPRbGMPFfgiHFhC73JNxBwFxEMOLQAAAALNRMDmibAP7cTR8lqRHL1TlHIi2qozQWYfQxW1MvSIObb615iHOhQe+ALHjJZsp+0iBUgxnbhj2a671ZI0txwY</AccessToken>
+          <RefreshToken
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS2JQqRegikinpXtonZvFqwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACzaLArZZ9D++S+KV5FyxmlSa36ZGY974aaUj2lYziaOQAAAAAOgAAAAAIAACAAAAD6RgjWKeyRltIRU1aB+5CxrBt/5gFWiRo9QC1o7C25T9AAAABWlT9tp+dW9ozWb2QPBApZDJ23QRA/Rg8qeIxlLXnYyXLMh09WKgplsE75OXiK0ufM4KS1mb8L7HC/6E4OWcoB5sleY0KfbIYw04rBRDzOAQjVjO6qVV8jf1dOxyCow5/8ZHouF044GryVPv/6Y4UU7L/xVVFGOBFtzvFY00tcEcW9ByQnd8+NGpm2ALzX52WWiYuWPRfLTIuZKEB0kHfRP6ldNa1er2FEco+cUGDya6Z8/95nUorFyzZmlAKMZ8wCpKOhGQvBPp3zncdG0aYKQAAAAEaj9JBQ6eAc+YVSN902uLYq/BPbBpRo9YEMUhgnhBDZ34oesscHfhFM8BuJv77uV7JN6mMEM5jHkynr576n6U0</RefreshToken>
+        </ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Public DS Stage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C03A8FBF-CFE8-415E-A5DB-B66D3E146812}"
+      DTS:ObjectName="Public DS Stage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=AMALITECH-PC-10430;Initial Catalog=Public_DS (STAGE);Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{C03A8FBF-CFE8-415E-A5DB-B66D3E146812}Emmanuel-PC;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Public_DS (DW)]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B0C1A6D5-A3B3-4F8E-BDF0-6D877E9BE4F7}"
+      DTS:ObjectName="Public_DS (DW)">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=AMALITECH-PC-10430;Initial Catalog=Public_DS (DW);Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{B0C1A6D5-A3B3-4F8E-BDF0-6D877E9BE4F7}AMALITECH-PC-10430.Public_DS (DW);Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Transform Data"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{920F39D6-8DC2-4F11-A10B-B24DE0AB5F93}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transform Data"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Transform Data\API Destination (Predefined Templates)"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="API Destination (Predefined Templates); ZappySys LLC (c) All Rights Reserved; SSIS PowerPack; http://www.zappysys.com/support"
+              description="API Destination can be used to write data to popular online services using predefined connector templates. You can create your own connector file use with this component."
+              name="API Destination (Predefined Templates)"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Table name. This option only used when AccessMode=Table"
+                  expressionType="Notify"
+                  name="TableName"
+                  typeConverter="ZappySys.PowerPack.Converters.TableWriteEditor,ZappySys.PowerPack160.UI,Version=1.0.0.0,Culture=neutral,PublicKeyToken=1903265a93eae502">Public_Procurement_Contract_Clean</property>
+                <property
+                  dataType="System.String"
+                  description="Parameters overrides for selected endpoint. Value set of these parameters overrides any default value defined in API Template"
+                  expressionType="Notify"
+                  name="Parameters"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="If this option is true then component will continue without exception on 404 error (Url not found). This allows you to consume data gracefully."
+                  expressionType="Notify"
+                  name="ContinueOnUrlNotFoundError">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Continue when any type of exception occurs during http request"
+                  expressionType="Notify"
+                  name="ContineOnAnyError">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Continue on error when specified substring found in response"
+                  expressionType="Notify"
+                  name="ContineOnErrorForMessage">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Continue on error when specified status code returned from web server"
+                  expressionType="Notify"
+                  name="ContineOnErrorForStatusCode">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When error occurs no data is returned. Use this option to get content eventhough error occurs. When this option is checked you can't use [continue on error when specific string found in response] option"
+                  expressionType="Notify"
+                  name="ConsumeResponseOnError">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Status code to match when error occurs and ContineOnErrorForStatusCode option is true. If Response status code matches to this code then task continues to run"
+                  expressionType="Notify"
+                  name="ErrorStatusCodeToMatch">404</property>
+                <property
+                  dataType="System.String"
+                  description="Status code(s) to match - separated by vertical bar (e.g. 404|405). When error occurs and ContineOnErrorForStatusCode option is true then if StatusCode matches to this code(s) then task continues to run"
+                  expressionType="Notify"
+                  name="ErrorStatusCodeToMatchRegex"></property>
+                <property
+                  dataType="System.String"
+                  description="Error substring to match when error occurs and ContineOnErrorForMessage option is true. If Response status code matches to this code then task continues to run"
+                  expressionType="Notify"
+                  name="ErrorSubstringToMatch"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies operation for destination data load (e.g. Insert, Update, Delete etc). Default operation is Insert."
+                  expressionType="Notify"
+                  name="Operation"
+                  typeConverter="ZappySys.Common.Connectivity.Api.ApiDataWriteMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Output raw data instead of parsed rows/columns in the response output for downstream. This option is ignored if EnableResponseOutput is not true."
+                  expressionType="Notify"
+                  name="OutputRaw">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="LoggingMode determines how much information is logged during Package Execution. Set Logging mode to Debugging for maximum log."
+                  expressionType="Notify"
+                  name="LoggingMode"
+                  typeConverter="ZappySys.PowerPack.Common.LoggingMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When you enable this property it will prefix timestamp before Log messages."
+                  expressionType="Notify"
+                  name="PrefixTimestamp">false</property>
+                <property
+                  dataType="System.Null"
+                  expressionType="Notify"
+                  name="SelfRef"
+                  typeConverter="NOTBROWSABLE" />
+                <property
+                  dataType="System.Boolean"
+                  description="Enable / Disable Response Output. Checking this option can remove unwanted warnings about unused Columns and many times speedup performance so if output is not needed set this option to True so its removed."
+                  name="DoNotCreateOutputs">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">ZappySys.ApiDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transform Data\API Destination (Predefined Templates).Connections[ZS-API]"
+                  connectionManagerID="Package.ConnectionManagers[API 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[API 1]"
+                  description="Select Runtime Connection Type ZS-API for this component"
+                  name="ZS-API" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ApiDestinationInput"
+                  truncationRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Awarding Agency]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Awarding Agency"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Awarding_Agency]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Awarding Agency]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Tender Package No.]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Package No."
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Tender_Package_No]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Package No.]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Tender Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Type"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Tender_Type]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Type]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Contract Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Type"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Contract_Type]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Type]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Lot #]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Lot #"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Lot_Number]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Lot #]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Tender Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Description"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Tender_Description]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Description]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Approval Auth]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Approval Auth"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Approval_Auth]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Approval Auth]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Contract Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Date"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Contract_Date]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Date]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Delivery / Completion Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Delivery / Completion Date"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Delivery_Completion_Date]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Delivery / Completion Date]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Contract Currency]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Currency"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Contract_Currency]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Currency]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Contract Award Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Award Price"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Contract_Award_Price]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Award Price]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Contract Awarded To]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Awarded To"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Contract_Awarded_To]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Awarded To]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Company Email]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Email"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Company_Email]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Email]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Company Address]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Address"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Company_Address]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Address]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Company Tel]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Tel"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Company_Tel]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Tel]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Supplier #]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Supplier #"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Supplier_Number]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Supplier #]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="URL"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[URL]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[URL]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Industry]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Industry"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Industry]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Industry]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Item Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Item Category"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Item_Category]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Category]" />
+                    <inputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].Columns[Item Subcategory]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Item Subcategory"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Item_Subcategory]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Subcategory]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[$$UseCustomApp]"
+                      dataType="wstr"
+                      length="500"
+                      name="$$UseCustomApp" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[$$ClientId]"
+                      dataType="wstr"
+                      length="500"
+                      name="$$ClientId" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[$$ClientSecret]"
+                      dataType="wstr"
+                      length="500"
+                      name="$$ClientSecret" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[$$Scope]"
+                      dataType="wstr"
+                      length="500"
+                      name="$$Scope" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[$$ProjectId]"
+                      dataType="wstr"
+                      length="500"
+                      name="$$ProjectId" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[$$DatasetId]"
+                      dataType="wstr"
+                      length="500"
+                      name="$$DatasetId" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[$$RetryMode]"
+                      dataType="wstr"
+                      length="500"
+                      name="$$RetryMode" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[$$RetryStatusCodeList]"
+                      dataType="wstr"
+                      length="500"
+                      name="$$RetryStatusCodeList" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[$$RetryCountMax]"
+                      dataType="wstr"
+                      length="500"
+                      name="$$RetryCountMax" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[$$RetryMultiplyWaitTime]"
+                      dataType="wstr"
+                      length="500"
+                      name="$$RetryMultiplyWaitTime" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[$$Location]"
+                      dataType="wstr"
+                      length="500"
+                      name="$$Location" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Awarding_Agency]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Awarding_Agency" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Tender_Package_No]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Tender_Package_No" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Tender_Type]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Tender_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Contract_Type]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Contract_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Lot_Number]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Lot_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Tender_Description]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Tender_Description" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Approval_Auth]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Approval_Auth" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Contract_Date]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Contract_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Delivery_Completion_Date]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Delivery_Completion_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Contract_Currency]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Contract_Currency" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Contract_Award_Price]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Contract_Award_Price" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Contract_Awarded_To]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Contract_Awarded_To" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Company_Email]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Company_Email" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Company_Address]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Company_Address" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Company_Tel]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Company_Tel" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Supplier_Number]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Supplier_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[URL]"
+                      dataType="wstr"
+                      length="4000"
+                      name="URL" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Industry]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Industry" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Item_Category]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Item_Category" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput].ExternalColumns[Item_Subcategory]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Item_Subcategory" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output]"
+                  name="Response Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].Columns[index]"
+                      dataType="i8"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].ExternalColumns[index]"
+                      lineageId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].Columns[index]"
+                      name="index" />
+                    <outputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].Columns[reason]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].ExternalColumns[reason]"
+                      length="255"
+                      lineageId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].Columns[reason]"
+                      name="reason" />
+                    <outputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].Columns[location]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].ExternalColumns[location]"
+                      length="255"
+                      lineageId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].Columns[location]"
+                      name="location" />
+                    <outputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].Columns[debugInfo]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].ExternalColumns[debugInfo]"
+                      length="4000"
+                      lineageId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].Columns[debugInfo]"
+                      name="debugInfo" />
+                    <outputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].Columns[message]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].ExternalColumns[message]"
+                      length="4000"
+                      lineageId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].Columns[message]"
+                      name="message" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].ExternalColumns[index]"
+                      dataType="i8"
+                      name="index" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].ExternalColumns[reason]"
+                      dataType="wstr"
+                      length="255"
+                      name="reason" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].ExternalColumns[location]"
+                      dataType="wstr"
+                      length="255"
+                      name="location" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].ExternalColumns[debugInfo]"
+                      dataType="wstr"
+                      length="4000"
+                      name="debugInfo" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[Response Output].ExternalColumns[message]"
+                      dataType="wstr"
+                      length="4000"
+                      name="message" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[ApiDestination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ApiDestination Error Output"
+                  synchronousInputId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[ApiDestination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data\API Destination (Predefined Templates).Outputs[ApiDestination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[ApiDestination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data\API Destination (Predefined Templates).Outputs[ApiDestination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[ApiDestination Error Output].Columns[ErrorColumnName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="128"
+                      lineageId="Package\Transform Data\API Destination (Predefined Templates).Outputs[ApiDestination Error Output].Columns[ErrorColumnName]"
+                      name="ErrorColumnName" />
+                    <outputColumn
+                      refId="Package\Transform Data\API Destination (Predefined Templates).Outputs[ApiDestination Error Output].Columns[ErrorMessage]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Transform Data\API Destination (Predefined Templates).Outputs[ApiDestination Error Output].Columns[ErrorMessage]"
+                      name="ErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform Data\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Transform Data\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transform Data\Conditional Split.Inputs[Conditional Split Input].Columns[Tender Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Description"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Description]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform Data\Conditional Split.Outputs[Empty Description]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Empty Description"
+                  synchronousInputId="Package\Transform Data\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[LEN](#{Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Description]}) &lt; 5</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">LEN([Tender Description]) &lt; 5</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transform Data\Conditional Split.Outputs[Has Description]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Has Description"
+                  synchronousInputId="Package\Transform Data\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transform Data\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Transform Data\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transform Data\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform Data\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Transform Data\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transform Data\Derived Column.Inputs[Derived Column Input].Columns[Tender Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Description"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Description]" />
+                    <inputColumn
+                      refId="Package\Transform Data\Derived Column.Inputs[Derived Column Input].Columns[Industry]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Industry"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Industry]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEN](#{Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Description]}) &lt; 5 ? NULL(DT_TEXT,1252) : #{Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Industry]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN([Tender Description]) &lt; 5 ? NULL(DT_TEXT,1252) : Industry</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Derived Column.Inputs[Derived Column Input].Columns[Item Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Item Category"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Category]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEN](#{Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Description]}) &lt; 5 ? NULL(DT_TEXT,1252) : #{Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Category]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN([Tender Description]) &lt; 5 ? NULL(DT_TEXT,1252) : [Item Category]</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Derived Column.Inputs[Derived Column Input].Columns[Item Subcategory]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Item Subcategory"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Subcategory]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEN](#{Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Description]}) &lt; 5 ? NULL(DT_TEXT,1252) : #{Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Subcategory]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN([Tender Description]) &lt; 5 ? NULL(DT_TEXT,1252) : [Item Subcategory]</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform Data\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Transform Data\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transform Data\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Transform Data\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transform Data\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform Data\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Transform Data\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform Data\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Transform Data\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transform Data\Multicast.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\Transform Data\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transform Data\Multicast.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\Transform Data\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform Data\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Public_Procurement_Contract_Clean]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transform Data\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Public_DS (DW)]"
+                  connectionManagerRefId="Package.ConnectionManagers[Public_DS (DW)]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Awarding Agency]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Awarding Agency"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Awarding Agency]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Awarding Agency]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tender Package No.]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Package No."
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tender Package No.]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Package No.]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tender Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Type"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tender Type]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Type]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Contract Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Type"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract Type]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Type]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Lot #]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Lot #"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lot #]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Lot #]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tender Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Description"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tender Description]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Description]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Approval Auth]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Approval Auth"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Approval Auth]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Approval Auth]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Contract Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Date"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract Date]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Date]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Delivery / Completion Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Delivery / Completion Date"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Delivery / Completion Date]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Delivery / Completion Date]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Contract Currency]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Currency"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract Currency]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Currency]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Contract Award Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Award Price"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract Award Price]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Award Price]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Contract Awarded To]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Awarded To"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract Awarded To]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Awarded To]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Company Email]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Email"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Company Email]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Email]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Company Address]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Address"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Company Address]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Address]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Company Tel]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Tel"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Company Tel]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Tel]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Supplier #]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Supplier #"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier #]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Supplier #]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="URL"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[URL]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[URL]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Industry]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Industry"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Industry]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Industry]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Item Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Item Category"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Item Category]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Category]" />
+                    <inputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Item Subcategory]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Item Subcategory"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Item Subcategory]"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Subcategory]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Awarding Agency]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Awarding Agency" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tender Package No.]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Tender Package No." />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tender Type]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Tender Type" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract Type]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Contract Type" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lot #]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Lot #" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tender Description]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Tender Description" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Approval Auth]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Approval Auth" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract Date]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Contract Date" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Delivery / Completion Date]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Delivery / Completion Date" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract Currency]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Contract Currency" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract Award Price]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Contract Award Price" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract Awarded To]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Contract Awarded To" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Company Email]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Company Email" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Company Address]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Company Address" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Company Tel]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Company Tel" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier #]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Supplier #" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[URL]"
+                      codePage="1252"
+                      dataType="text"
+                      name="URL" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Industry]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Industry" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Item Category]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Item Category" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Item Subcategory]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Item Subcategory" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform Data\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Public Procurement Contracts]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transform Data\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Public DS Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[Public DS Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Awarding Agency]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Awarding Agency]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Awarding Agency]"
+                      name="Awarding Agency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Package No.]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tender Package No.]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Package No.]"
+                      name="Tender Package No."
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Type]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tender Type]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Type]"
+                      name="Tender Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Type]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Contract Type]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Type]"
+                      name="Contract Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lot #]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lot #]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lot #]"
+                      name="Lot #"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Description]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tender Description]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Description]"
+                      name="Tender Description"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Approval Auth]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Approval Auth]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Approval Auth]"
+                      name="Approval Auth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Date]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Contract Date]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Date]"
+                      name="Contract Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Delivery / Completion Date]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Delivery / Completion Date]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Delivery / Completion Date]"
+                      name="Delivery / Completion Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Currency]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Contract Currency]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Currency]"
+                      name="Contract Currency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Award Price]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Contract Award Price]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Award Price]"
+                      name="Contract Award Price"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Awarded To]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Contract Awarded To]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Awarded To]"
+                      name="Contract Awarded To"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Email]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Company Email]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Email]"
+                      name="Company Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Address]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Company Address]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Address]"
+                      name="Company Address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Tel]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Company Tel]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Tel]"
+                      name="Company Tel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Supplier #]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Supplier #]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Supplier #]"
+                      name="Supplier #"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[URL]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[URL]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[URL]"
+                      name="URL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Industry]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Industry]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Industry]"
+                      name="Industry"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Category]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Item Category]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Category]"
+                      name="Item Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Subcategory]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Item Subcategory]"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Subcategory]"
+                      name="Item Subcategory"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Awarding Agency]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Awarding Agency" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tender Package No.]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Tender Package No." />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tender Type]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Tender Type" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Contract Type]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Contract Type" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lot #]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Lot #" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tender Description]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Tender Description" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Approval Auth]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Approval Auth" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Contract Date]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Contract Date" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Delivery / Completion Date]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Delivery / Completion Date" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Contract Currency]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Contract Currency" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Contract Award Price]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Contract Award Price" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Contract Awarded To]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Contract Awarded To" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Company Email]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Company Email" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Company Address]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Company Address" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Company Tel]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Company Tel" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Supplier #]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Supplier #" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[URL]"
+                      codePage="1252"
+                      dataType="text"
+                      name="URL" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Industry]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Industry" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Item Category]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Item Category" />
+                    <externalMetadataColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Item Subcategory]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Item Subcategory" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Awarding Agency]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Awarding Agency]"
+                      name="Awarding Agency" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tender Package No.]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tender Package No.]"
+                      name="Tender Package No." />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tender Type]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tender Type]"
+                      name="Tender Type" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Contract Type]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Contract Type]"
+                      name="Contract Type" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lot #]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lot #]"
+                      name="Lot #" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tender Description]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tender Description]"
+                      name="Tender Description" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Approval Auth]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Approval Auth]"
+                      name="Approval Auth" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Contract Date]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Contract Date]"
+                      name="Contract Date" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Delivery / Completion Date]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Delivery / Completion Date]"
+                      name="Delivery / Completion Date" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Contract Currency]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Contract Currency]"
+                      name="Contract Currency" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Contract Award Price]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Contract Award Price]"
+                      name="Contract Award Price" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Contract Awarded To]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Contract Awarded To]"
+                      name="Contract Awarded To" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Company Email]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Company Email]"
+                      name="Company Email" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Company Address]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Company Address]"
+                      name="Company Address" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Company Tel]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Company Tel]"
+                      name="Company Tel" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Supplier #]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Supplier #]"
+                      name="Supplier #" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[URL]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[URL]"
+                      name="URL" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Industry]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Industry]"
+                      name="Industry" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Item Category]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Item Category]"
+                      name="Item Category" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Item Subcategory]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Item Subcategory]"
+                      name="Item Subcategory" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform Data\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Transform Data\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Awarding Agency]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Awarding Agency"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Awarding Agency]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Awarding Agency]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Tender Package No.]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Package No."
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Package No.]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Package No.]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Tender Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Type"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Contract Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Type"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Lot #]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Lot #"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lot #]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Lot #]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Tender Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Description"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Description]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Description]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Approval Auth]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Approval Auth"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Approval Auth]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Approval Auth]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Contract Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Date"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Delivery / Completion Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Delivery / Completion Date"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Delivery / Completion Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Delivery / Completion Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Contract Currency]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Currency"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Currency]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Currency]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Contract Award Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Award Price"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Award Price]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Award Price]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Contract Awarded To]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Awarded To"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Awarded To]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Awarded To]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Company Email]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Email"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Email]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Email]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Company Address]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Address"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Address]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Address]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Company Tel]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Tel"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Tel]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Tel]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Supplier #]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Supplier #"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Supplier #]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Supplier #]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="URL"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[URL]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[URL]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Industry]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Industry"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Industry]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Industry]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Item Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Item Category"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Category]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Category]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 1].Columns[Item Subcategory]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Item Subcategory"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Subcategory]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Subcategory]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Transform Data\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Awarding Agency]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Awarding Agency"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Awarding Agency]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Awarding Agency]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Tender Package No.]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Package No."
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Package No.]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Package No.]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Tender Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Type"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Contract Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Type"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Lot #]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Lot #"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lot #]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Lot #]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Tender Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Tender Description"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tender Description]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Description]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Approval Auth]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Approval Auth"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Approval Auth]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Approval Auth]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Contract Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Date"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Delivery / Completion Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Delivery / Completion Date"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Delivery / Completion Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Delivery / Completion Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Contract Currency]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Currency"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Currency]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Currency]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Contract Award Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Award Price"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Award Price]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Award Price]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Contract Awarded To]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Contract Awarded To"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Contract Awarded To]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Awarded To]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Company Email]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Email"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Email]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Email]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Company Address]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Address"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Address]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Address]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Company Tel]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Company Tel"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Company Tel]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Tel]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Supplier #]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Supplier #"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Supplier #]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Supplier #]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="URL"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[URL]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[URL]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Industry]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Industry"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Industry]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Industry]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Item Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Item Category"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Category]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Category]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transform Data\Union All.Inputs[Union All Input 2].Columns[Item Subcategory]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Item Subcategory"
+                      lineageId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Subcategory]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Subcategory]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Transform Data\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform Data\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Awarding Agency]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Awarding Agency]"
+                      name="Awarding Agency" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Package No.]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Package No.]"
+                      name="Tender Package No." />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Type]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Type]"
+                      name="Tender Type" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Type]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Type]"
+                      name="Contract Type" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Lot #]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Lot #]"
+                      name="Lot #" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Description]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Tender Description]"
+                      name="Tender Description" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Approval Auth]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Approval Auth]"
+                      name="Approval Auth" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Date]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Date]"
+                      name="Contract Date" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Delivery / Completion Date]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Delivery / Completion Date]"
+                      name="Delivery / Completion Date" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Currency]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Currency]"
+                      name="Contract Currency" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Award Price]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Award Price]"
+                      name="Contract Award Price" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Awarded To]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Contract Awarded To]"
+                      name="Contract Awarded To" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Email]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Email]"
+                      name="Company Email" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Address]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Address]"
+                      name="Company Address" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Tel]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Company Tel]"
+                      name="Company Tel" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Supplier #]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Supplier #]"
+                      name="Supplier #" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[URL]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[URL]"
+                      name="URL" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Industry]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Industry]"
+                      name="Industry" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Category]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Category]"
+                      name="Item Category" />
+                    <outputColumn
+                      refId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Subcategory]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Transform Data\Union All.Outputs[Union All Output 1].Columns[Item Subcategory]"
+                      name="Item Subcategory" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Transform Data.Paths[Derived Column Output]"
+              endId="Package\Transform Data\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Transform Data\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Transform Data.Paths[Empty Description]"
+              endId="Package\Transform Data\Derived Column.Inputs[Derived Column Input]"
+              name="Empty Description"
+              startId="Package\Transform Data\Conditional Split.Outputs[Empty Description]" />
+            <path
+              refId="Package\Transform Data.Paths[Has Description]"
+              endId="Package\Transform Data\Union All.Inputs[Union All Input 2]"
+              name="Has Description"
+              startId="Package\Transform Data\Conditional Split.Outputs[Has Description]" />
+            <path
+              refId="Package\Transform Data.Paths[Multicast Output 1]"
+              endId="Package\Transform Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\Transform Data\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\Transform Data.Paths[Multicast Output 2]"
+              endId="Package\Transform Data\API Destination (Predefined Templates).Inputs[ApiDestinationInput]"
+              name="Multicast Output 2"
+              startId="Package\Transform Data\Multicast.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\Transform Data.Paths[OLE DB Source Output]"
+              endId="Package\Transform Data\Conditional Split.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\Transform Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Transform Data.Paths[Union All Output 1]"
+              endId="Package\Transform Data\Multicast.Inputs[Multicast Input 1]"
+              name="Union All Output 1"
+              startId="Package\Transform Data\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="153.333333333334,42.6666666666667"
+          Id="Package\Transform Data"
+          TopLeft="280.624995818362,165.749997036159" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Transform Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Transform Data\Conditional Split"
+          TopLeft="369.374994495884,259.34999536246" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Transform Data\OLE DB Source"
+          TopLeft="379.999994337559,135.199997582436" />
+        <NodeLayout
+          Size="154.666666666667,42"
+          Id="Package\Transform Data\Derived Column"
+          TopLeft="545.624991869553,372.449993340076" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Transform Data\OLE DB Destination"
+          TopLeft="204.374996954575,736.449986831248" />
+        <NodeLayout
+          Size="265.333333333334,42.6666666666667"
+          Id="Package\Transform Data\API Destination (Predefined Templates)"
+          TopLeft="523.12499220483,731.249986924232" />
+        <EdgeLayout
+          Id="Package\Transform Data.Paths[OLE DB Source Output]"
+          TopLeft="451.354161083388,177.866664249103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81.4833311133574"
+              Start="0,0"
+              End="0,73.9833311133574">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.9833311133574" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform Data.Paths[Empty Description]"
+          TopLeft="472.041661162551,302.016662029127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="150.916664040336,70.433331310949"
+              Start="0,0"
+              End="150.916664040336,62.933331310949">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.6023680450554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.6023680450554"
+                    Point2="0,28.6023680450554"
+                    Point3="4,28.6023680450554" />
+                  <mssgle:LineSegment
+                    End="146.916664040336,28.6023680450554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="146.916664040336,28.6023680450554"
+                    Point2="150.916664040336,28.6023680450554"
+                    Point3="150.916664040336,32.6023680450554" />
+                  <mssgle:LineSegment
+                    End="150.916664040336,62.933331310949" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="35.0613984264181,33.6023680450554,80.7938671875,11.3310546875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Transform Data\Union All"
+          TopLeft="378.749994356185,494.266658019225" />
+        <EdgeLayout
+          Id="Package\Transform Data.Paths[Derived Column Output]"
+          TopLeft="622.958325202887,414.449993340076">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-164.652775291146,79.8166646791496"
+              Start="0,0"
+              End="-164.652775291146,72.3166646791496">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2667016429671" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.2667016429671"
+                    Point2="0,47.2667016429671"
+                    Point3="-4,47.2667016429671" />
+                  <mssgle:LineSegment
+                    End="-160.652775291146,47.2667016429671" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-160.652775291146,47.2667016429671"
+                    Point2="-164.652775291146,47.2667016429671"
+                    Point3="-164.652775291146,51.2667016429671" />
+                  <mssgle:LineSegment
+                    End="-164.652775291146,72.3166646791496" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform Data.Paths[Has Description]"
+          TopLeft="421.61804998159,302.016662029127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,192.249995990099"
+              Start="0,0"
+              End="0,184.749995990099">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,184.749995990099" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-34.69693359375,86.7094706512993,69.3938671875,11.3310546875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Transform Data\Multicast"
+          TopLeft="379.374994346872,620.349989551008" />
+        <EdgeLayout
+          Id="Package\Transform Data.Paths[Union All Output 1]"
+          TopLeft="439.729161018195,536.933324685892">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83.416664865116"
+              Start="0,0"
+              End="0,75.916664865116">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.916664865116" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform Data.Paths[Multicast Output 1]"
+          TopLeft="421.15277212465,663.016656217675">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-130.777775170075,73.4333306135729"
+              Start="0,0"
+              End="-130.777775170075,65.9333306135729">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.9467812480514" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.9467812480514"
+                    Point2="0,29.9467812480514"
+                    Point3="-4,29.9467812480514" />
+                  <mssgle:LineSegment
+                    End="-126.777775170075,29.9467812480514" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-126.777775170075,29.9467812480514"
+                    Point2="-130.777775170075,29.9467812480514"
+                    Point3="-130.777775170075,33.9467812480514" />
+                  <mssgle:LineSegment
+                    End="-130.777775170075,65.9333306135729" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform Data.Paths[Multicast Output 2]"
+          TopLeft="458.930549902428,663.016656217675">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="196.861108969069,68.2333307065574"
+              Start="0,0"
+              End="196.861108969069,60.7333307065574">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8261739107002" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.8261739107002"
+                    Point2="0,27.8261739107002"
+                    Point3="4,27.8261739107002" />
+                  <mssgle:LineSegment
+                    End="192.861108969069,27.8261739107002" />
+                  <mssgle:CubicBezierSegment
+                    Point1="192.861108969069,27.8261739107002"
+                    Point2="196.861108969069,27.8261739107002"
+                    Point3="196.861108969069,31.8261739107002" />
+                  <mssgle:LineSegment
+                    End="196.861108969069,60.7333307065574" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transform Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transform Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
