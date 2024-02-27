@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{101129EE-5796-48AC-BCEF-27ACAE24C966}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{6B2294E2-521B-4B79-8236-9E2C64B448DF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,10 +27,10 @@
           ConnectByProxy="False">
           <AccessToken
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS2JQqRegikinpXtonZvFqwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACu6GOSdPGhJGm5BYjVdykTQNiHhOifNREsfn6IrwuRpgAAAAAOgAAAAAIAACAAAADtq/g7uxMy7g5pT1OIk6yEFkNZfUyCfodFRxUNpj7OMsABAACosTYmWrJzhm/ZIj3v51umFDEQ4/JjvT/bM/ElYQIwWSC/YRM9FcKAkasRts4uSfmlo7ZxR9+e30A81zGvL5bJQRNuqebNg3HwY5sWS4GWM1H/gd/wyJPD0uSrux9DCRHCJHEzm3PFlK8bowT5CRK90hxUCP5kDIfCtbcJzxE+ChFRuO3TMpQy+9w2MAQNzZvk6erPUgs5HkTSRe285D1tA0DZ0XVGMwA919DQEu/f8Klhof/oylstA/1EVuT16fB+SL0TfL1ld8G1Oeb13UeQikEjhwTwtfJ9EbcZznXpsBKB9oIfO0XVYNuYeA4LSvaT+H26zPUvpffOMzyvHLsYDirhLZ0Fvf/guLDITJyMiJUYEck8Vm8QFLqCJguxd7tN07jYhvCx0RQpi1SCMlTMrPRxT+OPOrcRpm215X1F2uwiQ0aVzQVyPkwD/3V1AxOWDjvmqYcBVq+7t/5GStDKTLBDV2G9Z2EndhPMaFXxiUdtGcGlxWEwDEIRpfF9XVyd5+U6EL8DyYpEErJYWeksj7divLMxBmZXfM2927xV36NnqCj6b+GWKG49ZsPpJEbGm93oTGic0yUWGjOfRHZtQAAAAN1113I/oDsNjuCYqRDu3gXuGptSOBYZYNIw0D85KW88Fe5/RNG7jyYlnac0EBQNBD1fkI6XGQ1Ycz2wuxOA9xM</AccessToken>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS2JQqRegikinpXtonZvFqwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC1K9wWtICJGz1McDpfqqniFMr2gppn225VV2bJDs+9YAAAAAAOgAAAAAIAACAAAADRiWSYWYlfH7fU49MsyohndJiFV5eFU2hlrG1ovfxrXsABAABBS8YLuSi/IYZaY9CVld/J7pE6cHbVnX4jBxazP/82VLWtOY94YLDyB/HmJXwKjfBQ+dP9sQQctudcC8O6tlN6/sxeYXXJUmyXnx4E9yPlsycVIHmuEZC7e8TMHZLDCV939SmMYTYNGbrfMKszPf5cK2T5JB4kvtaoGaAYaqUSqFt1sbmkDxHpeBflWvgR9MzYlOlwsVrngj3pwDuguhaHrAmNcHWMhl8MeJswKq8SKWxvbyFu9EgBPlz0eLCrvAh+7WUzGWWluzCuISEsTYw1t8fvJVlXLqSVaYWCl+51jS1nCMX8z+vYOY8EIZn/uoJeFL30BweWh0biBhA+1TbmkhtbbTu4l4LrZl8SCJo+W/vnlQsr8oWjv1gkQ9ZnktinO7MbQDFbPa9mwt0WRhmSC+kv/3r/dXrBwInP2WH6aTkPw0R5c239rlKxb3mjY4Bn/YN7RRhsFjqEgidvU03hzEhDXQ71vyYpb+7t0XyTwAVx9Z+A9QjwZAS22ubBKVE2wAz0rIiJKZqf2mkU7+B2qt+lfLsLpp4RHoWxvYPRn+QN1eVNmb/CAj+63BMbXWInsE4NkxdydeQnuGEWg/yaQAAAAOuIcVT48u65aIdJ0Dv0oIwNzLTeB81Ex0GFx/ctryPwF33tk6tDYlrHA81eYybvFuv0KA2TJltaU9F3c52MSOc</AccessToken>
           <RefreshToken
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS2JQqRegikinpXtonZvFqwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADwSn+visO6XEatL0nsz4EikkRUuiVFZUwh2J6Jegv9tQAAAAAOgAAAAAIAACAAAAAf1wOSJOGZqecX2WUzUn4GhNHsmecgx0ZdfplM3DEoLtAAAAAVBF4Ahb8I+rOKLTDdt2MCo8rzytW4Iv4hYi6R4gW764eWgGSOCjNpKrDzKhg+RU1gh2omqRqPTt0idGIgxGc0/vGv4MO7R2TtL3dwWEJ7KQudcmm/tVpTYmv3FJ8M95UVoOSxJVatxxSw9P01kx+KaTmJB47sy63UqQZALNc3KDbLNbHFTF4DctvaCDR52caYA/HNLtJet3rOWuvse6FXipW43zHMo94sYWLx26zDKbzihojq45EfWCUmk+72afsMLK6mg9Samx6P8hTEDq6dQAAAAA0qX18rxAnBl6mHwFZGBG8Um5FvABcHvq2kh9vctNqEHX5ZhqyvyNSRZ6hHL5T2SUfKnYPHcx90EijhZYinybQ</RefreshToken>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS2JQqRegikinpXtonZvFqwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADNtqVyulo7EeUfMDdwXTWI60UEGqcri2ETKL0qFiLAGAAAAAAOgAAAAAIAACAAAAAfx7ap3E10/bBQfJ1LH6tmbhE3t8AcdmAbvFnWzdWE9tAAAAAb9DtaJkEmtfgTJKPj4hRp2K1mYRBp2gLOTvRY2JSXzxJO5Zoi4c7v7Vp1fzMuui+uh+6vXPAOLOcvD5VS4C5d6lllociC0Ct4P70qNe54P+x+AqdwOBI42JJ4czhUCEFWZ21IjlK0snd3HGQryTgtabf7/8/aqQHfaENWQTPw0NOUoAXoLitlGD7fBCViAK/J9uMWyH+Ptlr6VgpkF4115LVlONQLdR1quZeuIYaHizlCO4tCmRqTh3IKeLxiGQGxAl6mq2VODnSBx2cnU6jRQAAAAMOvaaYX6MZhIUUA55bSFtb5/V3neZLJpMRjd3Aa9CmqB0Y4XPXSUsV73Yo25oYFwAJ+tWd3DKeG+XAOn6x8E7s</RefreshToken>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -55,7 +55,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=AMALITECH-PC-10430;Initial Catalog=Public_DS (DW);Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{B0C1A6D5-A3B3-4F8E-BDF0-6D877E9BE4F7}AMALITECH-PC-10430.Public_DS (DW);Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=AMALITECH-PC-10430;Initial Catalog=Public_DS (DW);Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{B0C1A6D5-A3B3-4F8E-BDF0-6D877E9BE4F7}AMALITECH-PC-10430.Public_DS (DW);" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -74,7 +74,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
-          Executable="C:\Users\EmmanuelTwumOsafo\anaconda3\pythonw.exe"
+          Executable="C:\Users\EmmanuelTwumOsafo\anaconda3\python.exe"
           Arguments="C:\Users\EmmanuelTwumOsafo\Documents\MEGA\Business Projects\Optima Data\PPA_Scrape.py"
           WorkingDirectory="C:\Users\EmmanuelTwumOsafo\Documents\MEGA\Business Projects\Optima Data" />
       </DTS:ObjectData>
@@ -2481,6 +2481,16 @@
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F27C8D36-DC03-4924-A406-8F377FF3A3C6}"
+      DTS:From="Package\PPA Data Scrapping"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Transform Data" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -2492,7 +2502,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="153.333333333334,42.6666666666667"
           Id="Package\Transform Data"
@@ -2501,6 +2511,28 @@
           Size="173.333333333334,42.6666666666667"
           Id="Package\PPA Data Scrapping"
           TopLeft="455.624993210658,142.999997442961" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="539.479159844729,185.666664109627">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,135.433330148657"
+              Start="0,0"
+              End="0,127.933330148657">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,127.933330148657" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2669,7 +2701,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-34.69693359375,86.7094706512993,69.3938671875,11.3310546875"
+              BoundingBox="-34.69693359375,86.7094706512995,69.3938671875,11.3310546875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2705,7 +2737,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="35.0613984264181,33.6023680450554,80.7938671875,11.3310546875"
+              BoundingBox="35.061398426418,33.6023680450554,80.7938671875,11.3310546875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
